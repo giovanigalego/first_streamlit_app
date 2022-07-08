@@ -60,7 +60,7 @@ def insert_row_snowflake(new_fruit):
         my_cur.execute('insert into fruit_load_list values'+ new_fruit)
         return "thanks for adding"+ new_fruit
 
-streamlit.stop()
+
 
 add_my_fruit = streamlit.text_input('What fruit would like to add?')        
 if streamlit.button('Add a fruit to the tlist'):
@@ -68,6 +68,7 @@ if streamlit.button('Add a fruit to the tlist'):
     back_from_frunction = insert_row_snowflake
     streamlit.text(back_from_funtion)
 
+streamlit.stop()
 
 fruit_add = streamlit.text_input('What fruit would you like to add?','Kiwi')
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_add)
